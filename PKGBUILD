@@ -1,6 +1,11 @@
+# SPDX-License-Identifier: AGPL-3.0
+#
 # Maintainer: Felix Yan <felixonmars@archlinux.org>
+# Maintainer: Truocolo <truocolo@aol.com>
+# Maintainer: Pellegrino Prevete (tallero) <pellegrinoprevete@gmail.com>
 
-pkgname=python-tomli
+_pkg="tomli"
+pkgname="python-${_pkg}"
 pkgver=2.0.1
 pkgrel=3
 pkgdesc="A lil' TOML parser"
@@ -24,7 +29,17 @@ check() {
 
 package() {
   cd tomli-$pkgver
-  python -m installer -d "$pkgdir" dist/*.whl
+  python \
+    -m \
+      installer \
+    --destdir="$pkgdir" \
+    dist/*.whl
 
-  install -Dm644 LICENSE -t "$pkgdir"/usr/share/licenses/$pkgname/
+  install \
+    -Dm644 \
+    LICENSE \
+    -t \
+      "${pkgdir}/usr/share/licenses/${pkgname}"
 }
+
+# vim:set sw=2 sts=-1 et:
