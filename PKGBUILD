@@ -20,12 +20,15 @@ pkgver=2.0.1
 pkgrel=3
 pkgdesc="A lil' TOML parser"
 url="https://github.com/hukkin/tomli"
-license=('MIT')
+license=(
+  'MIT'
+)
 arch=(
   'any'
 )
 depends=(
-  'python'
+  "${_py}>="${_pymajver}"
+  "${_py}<"${_pynextver}"
 )
 makedepends=(
   "${_py}-build"
