@@ -27,8 +27,8 @@ arch=(
   'any'
 )
 depends=(
-  "${_py}>="${_pymajver}"
-  "${_py}<"${_pynextver}"
+  "${_py}>=${_pymajver}"
+  "${_py}<${_pynextver}"
 )
 makedepends=(
   "${_py}-build"
